@@ -1,0 +1,11 @@
+<% if flash[:notice] %>
+    <div class="warning"><%= flash[:notice] %></div>
+<%end%>
+<%if @prop.errors.any? %>
+    <% @prop.errors.full_messages.each do |error_message| %>
+        This issue occurred: <%= error_message %><br />
+    <%end%>
+<%end%>
+<h3 hidden>Update this Property and add new detials </h3>
+    <%= render 'form', Property: @prop%>
+

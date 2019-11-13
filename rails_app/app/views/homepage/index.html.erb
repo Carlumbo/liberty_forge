@@ -1,0 +1,44 @@
+
+<% if current_user %> 
+    
+        <% if current_user.role.nil? %>
+            <div id="landlord_reg">
+                <h3>Seems you are not currently an affliated landlord, click <%= link_to('here', new_landlord_path)%> to being your application </h3>
+            </div>
+        <%elsif current_user.role == 'property_manager' %>
+                    <p>Welcome <%=Landlord.find(current_user.id).name%>! </p>
+                    <%= link_to('Manage Landlords', index_path)%>
+        <%elsif current_user.role == 'landlord' %>
+                    <p>Thanks for being a <%=current_user.role%> with us!. </p>
+                    <%= link_to('Manage properties', landlord_path(Landlord.find_by(user: current_user))) %>
+        <%elsif%>
+                    <p>this shouldnt be here</p>
+        <%end%> 
+
+<%end%> 
+
+<h3>Welcome To Liberty Forge Reality</h2>
+
+<p>Replace this area with api map from google</p>
+
+<div id="contact">
+    <h2>Contact US</h2>
+        <ul>
+            <li>Liberty Forge Reality is managed by Dillion Wheaton</li>
+            <li>Serving your local Akron Area</li>
+        </ul>
+    <h3>Liberty Forge Reality</h3>
+        <ul>
+            <li>Address:</li>
+            <li>Phone:</li>
+            <li>Operating Hours
+                <ol>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ol>
+            </li>
+        </ul>
+        <a href="not_a_site.com">Place Funcitonal contact button Here</a>

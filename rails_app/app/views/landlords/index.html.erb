@@ -1,0 +1,43 @@
+<% if @landlords.size > 0  %>
+        <%if current_user.role == 'landlord' %>
+            <div id= "landlords">
+                <p> All the landlords youre affliated with: </p>
+                    <ul>
+                        <% @landlords.each do |landlord| %>
+                        <li><%= link_to landlord.name %></li>
+                        <% end %>
+                    </ul>
+            </div>
+        <%elsif current_user.role == 'property manager' %>
+            <div id= "landlords">
+                <p> All the landlords you are managing </p>
+                    <ul>
+                        <% @landlords.each do |landlord| %>
+                        <li><%= link_to landlord.name %></li>
+                        <li><%= link_to landlord.name %></li>
+                        <% end %>
+                    </ul>
+            </div>
+        <%elsif current_user.role == 'tenant' %>
+            <div id= "landlords">
+                <p> Your Landlord</p>
+                    <ul>
+                        <% @landlords.each do |landlord| %>
+                        <li><%= link_to landlord.name %></li>
+                        <% end %>
+                    </ul>
+            </div>
+        <%else current_user.role.nil?%>
+        <%= flash[:notice] = "An error occured, landlord was not saved" %>
+        <% redirect_to root%>
+
+                        
+        <%end%>
+            
+
+    <%else%>
+    <p>There are currently no landlords</p>
+<%end%>
+
+            
+

@@ -1,0 +1,19 @@
+<h3>Landlord Profile:</h3>
+Name: <%= @landlord.name %>
+<br />
+<h4>Properties owned:</h4>
+    <% if @props.empty? %>
+     <p> It looks like you dont have any properties assigned at the moment, go ahead and apply for registration of property</p>
+    <%else%>
+        <p>Choose an Property to update or add a new property. </p>
+        <ul>
+            <% @props.each do |prop| %>
+                <li><%= link_to prop.name, landlord_prop_path(@landlord, prop) %></li>
+            <%end%>
+        </ul>
+    <%end%>
+<%= link_to 'Add New Property', new_landlord_prop_path(@landlord) %>
+<br />
+<%= link_to 'View Landlords', index_path%>
+
+
