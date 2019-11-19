@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  resources :homepages
   scope :api do
     resources :notes, except: [:new, :edit]
     resources :users, except: [:new, :edit]
   end
-
 =begin
 
   get '/landlords/index', :to => 'landlords#index', :as => :index
