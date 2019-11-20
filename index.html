@@ -17,44 +17,44 @@
     href="../app.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Darkmode.js/1.5.0/darkmode-js.min.js"></script>
-    <!-- <style>
-          body {
-        background-image: url("../img_folder/aspen.jpg");
-              background-repeat:no-repeat;
-            background-size:cover;
-      } 
-    </style>
-  -->
     
    
     <title>Liberty Forge</title>
   </head>
 
-  <body class="green lighten-4">
-    <div class="header green darken-3 white-text">
+  <body class="light4">
+
+      <nav class="blue">
+          <ul>
+            <form action="https://www.w3docs.com/" method="get" target="_blank">
+              <button type="submit" class="blue2">Sign-in</button>
+              <button type="submit" class="blue2">Sign-out</button>
+              <button type="submit" class="blue2">Log in with Facebook</button>
+           </form>
+          </ul>
+      </nav>
+   <div class="the-greatsky">
+    <div class="fabric">
       <h1 class="center">Welcome to Liberty Forge Landlord comment section!</h1>
     </div>
 
-    <!--
-    <div>
-      <img src=''>
-    </div>
-   -->
     <div class="row">
-      <div class="col s12 m6 l6">
+      <div class="something">
         <form id="blog-form" action="#">
           <div class="input-field">
             <input type="text" name="title" id="title" />
-            <label for="title">Title</label>
+            <label for="title">            Title</label>
+          </div>
+          <div class="input-field">
+              &nbsp;&nbsp;&nbsp;<input type="text" name="author" id="author" />
+            <label for="author" >Tenant</label>
+
+          <div class ="input-field">
+            <label for="content">Notation</label>
           </div>
 
-          <div class="input-field">
-            <input type="text" name="author" id="author" />
-            <label for="author">Tenant Name</label>
-          </div>
+          
 
-          <label for="content">Notation</label>
-          <div class="input-field">
             <textarea
               name="content"
               id="content"
@@ -65,10 +65,12 @@
 
           <input type="submit" value="Submit Note" class="btn" />
         </form>
-      </div>
+    </div>
 
-      <div class="col s12 m6 l6">
-        <h3 class="center">List of Notes</h3>
+
+    <div class='note-place'>
+      <div class='note-spot'>
+        <h3 class="center2">List of Notes</h3>
         <div class="note-lists"></div>
       </div>
     </div>
@@ -77,5 +79,6 @@
     <script src="javascripts/note.js"></script>
     <script src="javascripts/user.js"></script>
     <script src="javascripts/index.js"></script>
+  </div>
   </body>
 </html>

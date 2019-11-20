@@ -4,20 +4,28 @@ class Note {
         this.content = noteObj.content
         this.user = new User (noteObj.user)
     }
-
  render() {
      return `<div class="card">
-            <div class="card-content">
+            <div style = "position:relative; left: 800px; top:-300px; 
+            color: black; font-style: bold; font-size: 30px;  background-color: white; background-size: cover; backgroung-repeat: no-repeat; background-attachment: fixed; width: 500px; ;border: 1px solid black;
+            border: 3px solid lightblue;
+              class="card-content">
+            
                 <p>By: ${this.user.render()}</p>
                 <span class="card-title">${this.title}</span>
                 <p>
                     ${this.content}
                    
                 </p>
-                <div class="update">
-                <input type="submit" value="delete" id='btn'>
+                <div>
+                <button type="submit" style="background-color: #fbff00;
+                color: #026999;
+                border-color: #e4676f;
+                text-align: center;
+                font-size: 14px;" >Delete</button>
                 </div>
             </div>
+            <br />
         </div>`
     }
 }

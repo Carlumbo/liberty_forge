@@ -1,4 +1,71 @@
-.center {
-    color: #ffb509
+.center2 {
 
+    position: relative; 
+    left: 800px;
+    top: -300px; 
+    color: #e25c1e;
+    background-image: url("../img_folder/fabric.jpg");
+    background-size: cover;
+     width: 500px;
+     text-align: center;
+     border: 1px solid black;
+    outline-style: solid;
+    outline-color: #e4676f;
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+
+}
+
+.blue2 {
+    background-color: #fbff00;
+    color: #026999;
+    border-color: #e4676f;
+    text-align: center;
+    font-size: 14px;
+  }
+
+.input-field {
+    color: #e25c1e;
+    font-size: 20px;
+}
+
+body {
+    background-image: url("../img_folder/wood.jpg");
+          background-repeat:no-repeat;
+        background-size: 2024px 1024px;
+        margin: 0px;
+        background-attachment: fixed;
+  } 
+
+.fabric {
+    background-image: url("../img_folder/fabric.jpg");
+
+  background-attachment: fixed;
+  color: #e25c1e;
+  text-align: center;
+    font-size: 14px; 
+    border: 3px solid #e4676f;
+    border-bottom-left-radius: 50% ;
+    border-bottom-right-radius: 50% ;
+    background-size: 1000 2100px ;
+}
+
+#blog-form {
+    position: relative;
+    top: 50px; 
+    background-image: url("../img_folder/fabric.jpg");
+    background-repeat:no-repeat;
+    margin-right: 800px ;
+    text-align: center;
+    background-attachment: fixed;  
+    color: #e25c1e;
+    font-size: 14px; 
+    border: 3px solid #e4676f;
+    border-radius: 40% 40%;
+
+}
+
+.note-list {
+    position:relative; left:-150px; 
+    top:2px; 
 }
