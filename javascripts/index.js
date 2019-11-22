@@ -8,13 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadNotes = async params => {
         const notes = await (await fetch(BASEURL + '/api/notes')).json()
         appInstance = new App(notes)
-
-
         noteList.innerHTML = appInstance.render()
+        
     }
 
-
-/*
+    debugger
+/*  
     const findNotes = async params => {
         const notes = await (await fetch(BASEURL + '/api/notes')).json()
         appInstance = new App(notes)
@@ -24,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         appInstance.render()
     }
 */ 
+
     const handleSubmission = e => {
         e.preventDefault()
         const data = {
@@ -61,34 +61,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 })
 
-document.addEventListener('DOMContentLoaded', () => {
-    const findNotes = async params => {
-        const notes = await (await fetch(BASEURL + '/api/notes')).json()
-        appInstance = new App(notes)
-        appInstance.notes
-        delete appInstance["notes"][0]
-        appInstance.render()
-    }   
 
 
-        
+function fetchNotes() {
+    return fetch(BASEURL + '/api/notes')
+      .then(resp => resp.json())
+      .then(json => renderNotes(json))
+    
+  }
 
+  function renderNotes(json) { 
+    const main = document.querySelector('main')
 
-})
+    let note = json.pop().user.name 
 
+      const h2 = document.createElement('h2')
+    
+      h2.innerHTML = `<h2>${note}</h2>`
+      main.appendChild(h2)
+    
+  }
+  
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    fetchNotes()
+  })
 
-let p = new Promise((resolve, reject) => {
-    let a = 1 + 1
-    if (a == 2) {
-        resolve('Success')
-    } else {
-        reject('Failed')
-    }
-})
+/*
+  function deleteLast() {
+    appInstance.notes.pop()
+  }
 
-
-p.then((message) => {
-    console.log('this is in the then ' + message)
-}).catch((message) => {
-    console.log('This is in the catch ' + message)
-})
+  document.addEventListener('button', deleteLast)
+  */

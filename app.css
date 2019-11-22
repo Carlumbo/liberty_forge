@@ -16,6 +16,22 @@
 
 }
 
+
+.main {
+  position: relative;
+  top: 100px;
+  color: #e25c1e;
+    background-image: url("../img_folder/fabric.jpg");
+    background-size: cover;
+     width: 500px;
+     text-align: center;
+     border: 1px solid black;
+    outline-style: solid;
+    outline-color: #e4676f;
+    background-attachment: fixed;   
+    background-repeat:no-repeat;
+    font-size: 20px;
+}
 .blue2 {
     background-color: #fbff00;
     color: #026999;
