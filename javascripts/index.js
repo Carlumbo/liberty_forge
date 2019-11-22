@@ -12,7 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
     }
 
-    debugger
+
+    document.getElementById("counter")
+  .addEventListener('click', clickCount)
+    //
 /*  
     const findNotes = async params => {
         const notes = await (await fetch(BASEURL + '/api/notes')).json()
@@ -46,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => res.json())
             .then(data => {
               const note = new Note(data)
+              appInstance.notes.push(note)
               noteList.innerHTML = appInstance.render()
               e.target.reset()
             })
@@ -94,3 +98,29 @@ function fetchNotes() {
 
   document.addEventListener('button', deleteLast)
   */
+
+
+  let i = 0
+
+
+  function clickCount() {
+    const count = document.getElementById('count')
+     i += 1
+     count.innerHTML = `${i}`  
+  }
+
+/* 
+1. fetch 
+2. array terminology
+3. hoisting ***Main focus***
+4. dont worry too much about events in JS
+5. dont read, practice it
+6. How to build a game link  -->
+7. What is the overall idea of the feature 
+8. what triggers the feature 
+9. when should I be able to trigger the feature
+
+*/
+  //document.getElementById("counter")
+  //.addEventListener('click', clickCount)
+  
